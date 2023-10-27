@@ -10,9 +10,6 @@ export default function Resume() {
   return (
     <>
       <div className="container">
-        <div className="sidebar">
-          <SideBar />
-        </div>
         <div className="body">
           <div className="main-container">
             <Header title={"RESUME"} />
@@ -21,11 +18,6 @@ export default function Resume() {
             </div>
             <div className="experience-container">
               <Experience />
-            </div>
-          </div>
-          <div className="menu">
-            <div className="menu-container">
-              <MiniMenu />
             </div>
           </div>
         </div>

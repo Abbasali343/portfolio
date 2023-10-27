@@ -1,14 +1,14 @@
 .container {
-  width: 1280px;
+  width: 100%;
   height: 636px;
   background-color: #fff;
   display: flex;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  position: relative;
+  left: -10px;
+  top: -10px;
 }
 .image-container {
-  height: 640px;
+  
   width: 636px;
 }
 .text-container {
@@ -21,7 +21,7 @@
 }
 .sub-container {
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 .greetings {
   font-weight: 800;
@@ -52,11 +52,15 @@
 }
 .home-btn {
   width: 190px;
-  height: 40px;
+  height: 80px;
+  text-decoration: none;
+  color: #fff;
   background-color: #ffba31;
   border: 1px solid #ffba31;
   border-radius: 15px;
   cursor: pointer;
+  font-size: 22px;
+  padding: 10px;
 }
 .sidebar {
   width: 300px;
@@ -64,8 +68,8 @@
 }
 .body {
   width: 980px;
-  height: 100%;
-  overflow: hidden;
+  height: 650px;
+  
   background-color: #e5e5e5;
   display: flex;
 }
@@ -74,7 +78,7 @@
   height: 100%;
 }
 .menu-container {
-  transform: translate(45px, 110px);
+  transform: translate(0, 150px);
 }
 
 .sidebar-container {
@@ -86,15 +90,57 @@
   width: 100%;
   height: 200px;
 }
+.main-page-container{
+  display: flex;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.main-body-sub-container{
+  width: 850px;
+  height: 640px;
+  overflow: hidden;
+}
+.main-side-bar{
+  width: 300px;
+  height: 640px;
+  position: absolute;
+  top: 634px;
+  left: 0;
+  
+}
+.main-body{
+  width: 850px;
+  height: 640px;
+  position: absolute;
+  top: 634px;
+  left: 300px;
+  overflow: auto;
+  
+}
+.main-menu{
+  width: 130px;
+  height: 640px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 634px;
+  left: 1150px;
+}
+.clickable-container{
+  margin-left: -35px;
+  margin-top: 20px;
+  text-align: center;
+}
 .clickable {
   width: 200px;
   cursor: pointer;
+  color: #000;
   font-weight: bold;
   font-family: "Posterama 2001 W04 SemiBold";
   font-size: 18px;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 40px;
   text-align: center;
+  text-decoration: none;
 }
 .clickable:hover {
   background-color: #000;
@@ -113,6 +159,7 @@
   background-color: #ffba31;
   border: 1px solid #ffba31;
   border-radius: 35px;
+  transform: translate(30px,0);
 }
 .icon {
   width: 30px;

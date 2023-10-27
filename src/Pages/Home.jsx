@@ -4,12 +4,12 @@ import Introduction from "../Components/Introduction";
 
 
 
-export default function Home() {
+export default function Home({handleScroll}) {
   return (
     <>
-      <div className="container">
-        <Introduction />
-        <div className="image-container">
+      <div className="container" id="main">
+        <Introduction handleScroll={handleScroll} />
+        <div className="image-container" style={{background:"black"}}>
           <img src={profileImage} className="profile-img" />
         </div>
       </div>

@@ -1,6 +1,4 @@
-import SideBar from "../Layout/SideBar";
 import Header from "../Components/Header";
-import MiniMenu from "../Layout/MiniMenu";
 import email from "../assets/images/contact1.png";
 import call from "../assets/images/contact2.png";
 import "../assets/styles/Home.css";
@@ -12,13 +10,10 @@ const text =
 const emailAddress = "abc@gmail.com";
 const phoneNumber = "0000000000";
 
-export default function ContactUs() {
+export default function ContactUs({ handleScroll }) {
   return (
     <>
-      <div className="container">
-        <div className="sidebar">
-          <SideBar />
-        </div>
+      <div className="container" id="contact-us">
         <div className="body">
           <div className="main-container">
             <Header title={"CONTACT ME"} />
@@ -44,11 +39,6 @@ export default function ContactUs() {
                 </div>
               </div>
               <h1 className="cnt-greetings">Thanks for Patience!</h1>
-            </div>
-          </div>
-          <div className="menu">
-            <div className="menu-container">
-              <MiniMenu />
             </div>
           </div>
         </div>

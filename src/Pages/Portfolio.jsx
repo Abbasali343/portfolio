@@ -16,13 +16,10 @@ export default function Portfolio() {
   function handleCategory(value) {
     setCategory(value);
   }
-  console.log(category);
   return (
     <>
-      <div className="container">
-        <div className="sidebar">
-          <SideBar />
-        </div>
+      <div className="container" id="portfolio">
+        
         <div className="body">
           <div className="main-container">
             <Header title={"PORTFOLIO"} />
@@ -34,11 +31,7 @@ export default function Portfolio() {
 
             <div></div>
           </div>
-          <div className="menu">
-            <div className="menu-container">
-              <MiniMenu />
-            </div>
-          </div>
+          
         </div>
       </div>
     </>

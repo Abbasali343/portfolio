@@ -8,10 +8,7 @@ import "../assets/styles/Main.css";
 export default function Testimonials() {
   return (
     <>
-      <div className="container">
-        <div className="sidebar">
-          <SideBar />
-        </div>
+      <div className="container" id="testimonials">
         <div className="body">
           <div className="main-container">
             <Header title={"TESTIMONIALS"} />
@@ -20,11 +17,6 @@ export default function Testimonials() {
               <TestimonialCard />
               <TestimonialCard />
               <TestimonialCard />
-            </div>
-          </div>
-          <div className="menu">
-            <div className="menu-container">
-              <MiniMenu />
             </div>
           </div>
         </div>
