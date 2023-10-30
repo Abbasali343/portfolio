@@ -10,10 +10,33 @@ import { useState } from "react";
 
 export default function Main() {
   const [isActive, setIsActive] = useState("about-us");
+  const [scrollAmount, setScrollAmount] = useState(0);
 
   function handleScroll(id) {
+    if(id==='about-us'){
+      setScrollAmount(0);
+    }
     setIsActive(id);
   }
+
+  const handleScroll1 = (event) => {
+    // Get the current scroll position from the scrollTop property of the div
+    const newScrollAmount = event.target.scrollTop;
+    setScrollAmount(newScrollAmount);
+    const activeAmount =
+      scrollAmount < 580
+        ? "about-us"
+        : scrollAmount < 1190
+        ? "resume"
+        : scrollAmount < 1820
+        ? "portfolio"
+        : scrollAmount < 2450
+        ? "testimonials"
+        : scrollAmount < 2560
+        ? "contact-us"
+        : null;
+        setIsActive(activeAmount);
+  };
 
   return (
     <>
@@ -21,9 +44,13 @@ export default function Main() {
         <Home handleScroll={handleScroll} />
         <div className="main-page-container">
           <div className="main-side-bar">
-            <SideBar isActive={isActive} handleScroll={handleScroll} />
+            <SideBar
+              isActive={isActive}
+              handleScroll={handleScroll}
+              scrollAmount={scrollAmount}
+            />
           </div>
-          <div className="main-body">
+          <div className="main-body" onScroll={handleScroll1}>
             <div className="main-body-sub-container">
               <AboutUs />
             </div>

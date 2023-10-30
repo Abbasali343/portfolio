@@ -3,8 +3,8 @@ import { useState } from "react";
 import profileImage from "../assets/images/profile-image.jpg";
 import "../assets/styles/Home.css";
 
-export default function SideBar({ isActive, handleScroll }) {
-  function links(index, name, id) {
+export default function SideBar({ isActive, handleScroll, scrollAmount }) {
+  function links(index, name, id, amount) {
     return (
       <div className="clickable-container">
         <a
