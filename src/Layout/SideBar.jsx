@@ -3,7 +3,7 @@ import { useState } from "react";
 import profileImage from "../assets/images/profile-image.jpg";
 import "../assets/styles/Home.css";
 
-export default function SideBar({ isActive, handleScroll, scrollAmount }) {
+export default function SideBar({ isActive, handleScroll, scrollAmount,link }) {
   function links(index, name, id, amount) {
     return (
       <div className="clickable-container">
@@ -32,7 +32,7 @@ export default function SideBar({ isActive, handleScroll, scrollAmount }) {
   return (
     <>
       <div className="sidebar-container">
-        <img src={profileImage} className="sidebar-image" />
+        <img src={link} className="sidebar-image" />
         <div>
           {links("main", "HOME", "#main")}
           {links("about-us", "about-us", "#about-us")}

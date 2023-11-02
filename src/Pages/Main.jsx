@@ -16,8 +16,7 @@ export default function Main() {
   const [testimonialData, setTestimonialData] = useState([]);
   const [contactData, setContactData] = useState([]);
   const [mixData, setMixData] = useState([]);
-  const [educationData, setEducationData] = useState([]);
-  const [experienceData, setExperienceData] = useState([]);
+  const [PortfolioData, setPortfolioData] = useState([]);
 
   const fetchUser = () => {
     axios.get("http://localhost:3000/v1/admin/allUsers").then((response) => {
@@ -43,12 +42,20 @@ export default function Main() {
         setMixData(response.data);
       });
   };
+  const fetchPortFolio = () => {
+    axios
+      .get("http://localhost:3000/v1/admin/allPortfolios")
+      .then((response) => {
+        setPortfolioData(response.data);
+      });
+  };
 
   useEffect(() => {
     fetchUser();
     fetchTestimonial();
     fetchContact();
     fetchEducationAndExperience();
+    fetchPortFolio();
   }, []);
 
   let name = "";
@@ -58,6 +65,7 @@ export default function Main() {
   let experience = null;
   let projects = null;
   let followers = null;
+  let link = "";
 
   if (data.length !== 0) {
     name = data[0].name;
@@ -67,6 +75,7 @@ export default function Main() {
     experience = data[0].experience;
     projects = data[0].projects;
     followers = data[0].followers;
+    link = data[0].link;
   }
 
   function handleScroll(id) {
@@ -100,7 +109,7 @@ export default function Main() {
       <div>
         <Home
           handleScroll={handleScroll}
-          details={{ name, profession, description }}
+          details={{ name, profession, description, link }}
         />
         <div className="main-page-container">
           <div className="main-side-bar">
@@ -108,6 +117,7 @@ export default function Main() {
               isActive={isActive}
               handleScroll={handleScroll}
               scrollAmount={scrollAmount}
+              link={link}
             />
           </div>
           <div className="main-body" onScroll={handleScroll1}>
@@ -130,7 +140,7 @@ export default function Main() {
               </div>
             </div>
             <div className="main-body-sub-container">
-              <Portfolio />
+              <Portfolio details={PortfolioData} />
             </div>
             <div className="main-body-sub-container">
               <Testimonials details={testimonialData} />
