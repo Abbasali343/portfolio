@@ -6,7 +6,15 @@ import Experience from "../Components/Experience";
 import "../assets/styles/Home.css";
 import "../assets/styles/Main.css";
 
-export default function Resume() {
+export default function Resume({ details }) {
+  const education = details.filter(checkEducation);
+  const experience = details.filter(checkExperience);
+  function checkEducation(detail) {
+    return detail.type === "education";
+  }
+  function checkExperience(detail) {
+    return detail.type === "experience";
+  }
   return (
     <>
       <div className="container">
@@ -14,10 +22,10 @@ export default function Resume() {
           <div className="main-container">
             <Header title={"RESUME"} />
             <div className="education">
-              <Education />
+              <Education details={education} />
             </div>
             <div className="experience-container">
-              <Experience />
+              <Experience details={experience} />
             </div>
           </div>
         </div>

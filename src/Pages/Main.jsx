@@ -6,14 +6,71 @@ import Portfolio from "./Portfolio";
 import Testimonials from "./Testimonials";
 import SideBar from "../Layout/SideBar";
 import MiniMenu from "../Layout/MiniMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Main() {
   const [isActive, setIsActive] = useState("about-us");
   const [scrollAmount, setScrollAmount] = useState(0);
+  const [data, setData] = useState([]);
+  const [testimonialData, setTestimonialData] = useState([]);
+  const [contactData, setContactData] = useState([]);
+  const [mixData, setMixData] = useState([]);
+  const [educationData, setEducationData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
+
+  const fetchUser = () => {
+    axios.get("http://localhost:3000/v1/admin/allUsers").then((response) => {
+      setData(response.data);
+    });
+  };
+  const fetchTestimonial = () => {
+    axios
+      .get("http://localhost:3000/v1/admin/allTestimonials")
+      .then((response) => {
+        setTestimonialData(response.data);
+      });
+  };
+  const fetchContact = () => {
+    axios.get("http://localhost:3000/v1/admin/allContacts").then((response) => {
+      setContactData(response.data);
+    });
+  };
+  const fetchEducationAndExperience = () => {
+    axios
+      .get("http://localhost:3000/v1/admin/allEducations")
+      .then((response) => {
+        setMixData(response.data);
+      });
+  };
+
+  useEffect(() => {
+    fetchUser();
+    fetchTestimonial();
+    fetchContact();
+    fetchEducationAndExperience();
+  }, []);
+
+  let name = "";
+  let profession = "";
+  let description = "";
+  let clients = null;
+  let experience = null;
+  let projects = null;
+  let followers = null;
+
+  if (data.length !== 0) {
+    name = data[0].name;
+    profession = data[0].profession;
+    description = data[0].description;
+    clients = data[0].clients;
+    experience = data[0].experience;
+    projects = data[0].projects;
+    followers = data[0].followers;
+  }
 
   function handleScroll(id) {
-    if(id==='about-us'){
+    if (id === "about-us") {
       setScrollAmount(0);
     }
     setIsActive(id);
@@ -35,13 +92,16 @@ export default function Main() {
         : scrollAmount < 2560
         ? "contact-us"
         : null;
-        setIsActive(activeAmount);
+    setIsActive(activeAmount);
   };
 
   return (
     <>
       <div>
-        <Home handleScroll={handleScroll} />
+        <Home
+          handleScroll={handleScroll}
+          details={{ name, profession, description }}
+        />
         <div className="main-page-container">
           <div className="main-side-bar">
             <SideBar
@@ -52,21 +112,31 @@ export default function Main() {
           </div>
           <div className="main-body" onScroll={handleScroll1}>
             <div className="main-body-sub-container">
-              <AboutUs />
+              <AboutUs
+                details={{
+                  name,
+                  profession,
+                  description,
+                  clients,
+                  projects,
+                  followers,
+                  experience,
+                }}
+              />
             </div>
             <div className="main-body-sub-container">
               <div id="resume">
-                <Resume />
+                <Resume details={mixData} />
               </div>
             </div>
             <div className="main-body-sub-container">
               <Portfolio />
             </div>
             <div className="main-body-sub-container">
-              <Testimonials />
+              <Testimonials details={testimonialData} />
             </div>
             <div className="main-body-sub-container">
-              <ContactUs handleScroll={handleScroll} />
+              <ContactUs handleScroll={handleScroll} details={contactData} />
             </div>
           </div>
           <div className="main-menu">

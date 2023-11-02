@@ -1,33 +1,21 @@
 import ResumeCard from "./ResumeCard";
 import "../assets/styles/Main.css";
 
-const degree = "Mcs";
-const institute = "University of Sahiwal";
-const description =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-
-export default function Education() {
+export default function Education({ details }) {
+  const renderCard = details.map((item) => (
+    <div key={item._id}>
+      <ResumeCard
+        degree={item.title}
+        institute={item.company}
+        description={item.description}
+      />
+    </div>
+  ));
   return (
     <>
       <div className="education-container">
         <h1 className="education-heading">EDUCATION</h1>
-        <div className="education-sub-container">
-          <ResumeCard
-            degree={degree}
-            institute={institute}
-            description={description}
-          />
-          <ResumeCard
-            degree={degree}
-            institute={institute}
-            description={description}
-          />
-          <ResumeCard
-            degree={degree}
-            institute={institute}
-            description={description}
-          />
-        </div>
+        <div className="education-sub-container">{renderCard}</div>
       </div>
     </>
   );
