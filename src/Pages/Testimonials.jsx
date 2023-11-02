@@ -10,6 +10,7 @@ export default function Testimonials({ details }) {
   const renderCard = details.map((item) => (
     <div key={item._id}>
       <TestimonialCard
+        link={item.link}
         name={item.name}
         profession={item.profession}
         description={item.description}
