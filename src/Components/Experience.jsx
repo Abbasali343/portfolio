@@ -3,7 +3,7 @@ import "../assets/styles/Main.css";
 
 export default function Experience({ details }) {
   const renderCard = details.map((item) => (
-    <div key={item._id}>
+    <div key={item}>
       <ResumeCard
         
         degree={item.title}

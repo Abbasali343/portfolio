@@ -29,11 +29,6 @@ export default function AboutUs({ details }) {
             </div>
           </div>
         </div>
-        {/* <div className="menu">
-            <div className="menu-container">
-              <MiniMenu />
-            </div>
-          </div> */}
       </div>
     </>
   );

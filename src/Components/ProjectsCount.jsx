@@ -1,6 +1,6 @@
 import "../assets/styles/Main.css";
 
-export default function ({value,string}) {
+export default function ({ value, string }) {
   return (
     <>
       <div className="values-container">

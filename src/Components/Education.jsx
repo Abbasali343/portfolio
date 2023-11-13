@@ -3,7 +3,7 @@ import "../assets/styles/Main.css";
 
 export default function Education({ details }) {
   const renderCard = details.map((item) => (
-    <div key={item._id}>
+    <div key={item}>
       <ResumeCard
         degree={item.title}
         institute={item.company}

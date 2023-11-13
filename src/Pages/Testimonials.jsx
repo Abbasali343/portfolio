@@ -8,7 +8,7 @@ import "../assets/styles/Main.css";
 
 export default function Testimonials({ details }) {
   const renderCard = details.map((item) => (
-    <div key={item._id}>
+    <div key={item}>
       <TestimonialCard
         link={item.link}
         name={item.name}

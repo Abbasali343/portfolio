@@ -10,13 +10,13 @@ const text =
 const emailAddress = "abc@gmail.com";
 const phoneNumber = "0000000000";
 
-export default function ContactUs({ handleScroll,details }) {
-  let email = '';
-  let phoneNo = ';';
-  if(details.length!==0){
-    email = details[0].email;
-    phoneNo = details[0].phoneNo;
-  }
+export default function ContactUs({ email,phoneNo }) {
+  // let email = '';
+  // let phoneNo = ';';
+  // if(details.length!==0){
+  //   email = details[0].email;
+  //   phoneNo = details[0].phoneNo;
+  // }
     return (
     <>
       <div className="container" id="contact-us">
