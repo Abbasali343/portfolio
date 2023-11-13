@@ -7,11 +7,11 @@ import "../assets/styles/Home.css";
 import "../assets/styles/Main.css";
 
 export default function Testimonials({ details }) {
-  const renderCard = details.map((item) => (
+  const renderCard = details.slice(0,4).map((item) => (
     <div key={item}>
       <TestimonialCard
         link={item.link}
-        name={item.name}
+        name={item.testimonialName}
         profession={item.profession}
         description={item.description}
       />

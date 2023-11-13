@@ -2,7 +2,7 @@ import ResumeCard from "./ResumeCard";
 import "../assets/styles/Main.css";
 
 export default function Education({ details }) {
-  const renderCard = details.map((item) => (
+  const renderCard = details.slice(0,3).map((item) => (
     <div key={item}>
       <ResumeCard
         degree={item.title}

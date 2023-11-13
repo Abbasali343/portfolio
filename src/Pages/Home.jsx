@@ -10,7 +10,7 @@ export default function Home({ handleScroll,details }) {
       <div className="container" id="main">
         <Introduction handleScroll={handleScroll} details={details} />
         <div className="image-container" style={{ background: "black" }}>
-          <img src={details.link} className="profile-img" />
+          <img src={details.profile} className="profile-img" />
         </div>
       </div>
     </>
