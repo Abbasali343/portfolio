@@ -1,6 +1,6 @@
 import "../../assets/styles/Main.css";
 
-export default function WebDesignItems({ details }) {
+export default function PortfolioItems({ details }) {
   let links;
   let renderCard;
   if (details && details.length > 0) {
@@ -10,7 +10,7 @@ export default function WebDesignItems({ details }) {
     if (links !== null) {
       renderCard = links.map((item) => (
         <div key={item}>
-          <img src={item} className="pg-image" alt={`Web Design Item`} />
+          <img src={item} className="pg-image" />
         </div>
       ));
     }
@@ -18,7 +18,7 @@ export default function WebDesignItems({ details }) {
 
   return (
     <>
-      <div className="wd-container">{renderCard && renderCard}</div>
+      <div className="gd-container">{renderCard && renderCard}</div>
     </>
   );
 }

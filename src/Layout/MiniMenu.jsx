@@ -1,5 +1,3 @@
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import home from "../assets/images/home.png";
 import about from "../assets/images/about_us.png";
 import resume from "../assets/images/brief_case.png";
@@ -8,14 +6,6 @@ import contact from "../assets/images/contact.png";
 import testimonial from "../assets/images/testimonial.png";
 
 export default function MiniMenu({ isActive, handleScroll }) {
-  // const navigate = useNavigate();
-
-  // const [isActive,setIsActive] = useState(0)
-  // function handleClick(index,route){
-  //     setIsActive(index);
-  //     // navigate(route);
-  // }
-
   function icons(index, source, id) {
     return (
       <a>

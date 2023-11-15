@@ -1,31 +1,28 @@
-import SideBar from "../Layout/SideBar";
 import Header from "../Components/Header";
-import MiniMenu from "../Layout/MiniMenu";
 import PortfolioNavBar from "../Layout/PortfolioNavBar";
 import AllCategoriesItems from "../Components/Portfolio/AllCategoriesItems";
-import PhotoGraphyItems from "../Components/Portfolio/PhotoGraphyItems";
-import WebDesignItems from "../Components/Portfolio/WebDesignItems";
-import GraphicDesignItems from "../Components/Portfolio/GraphicDesignItems";
+import PortfolioItems from "../Components/Portfolio/PortfolioItems";
 import "../assets/styles/Home.css";
 import "../assets/styles/Main.css";
 import { useState } from "react";
 
 export default function Portfolio({ details }) {
   const [category, setCategory] = useState("all");
-
-  const webDevelopment = details.filter(checkWebDevelopment);
-  const graphicDesign = details.filter(checkGraphicDesign);
-  const photoGraphy = details.filter(checkPhotoGraphy);
-  const allDetails = { webDevelopment, graphicDesign, photoGraphy };
-
-  function checkWebDevelopment(detail) {
-    return detail.field === "web development";
+  const fields = [];
+  const allLinks = [];
+  if (details) {
+    details.map((item) => {
+      fields.push(item.field);
+      allLinks.push(item.links);
+    });
   }
-  function checkGraphicDesign(detail) {
-    return detail.field === "graphic design";
+  let dataArray;
+  if (category !== "all") {
+    dataArray = details.filter(checkCategory);
   }
-  function checkPhotoGraphy(detail) {
-    return detail.field === "photography";
+
+  function checkCategory(detail) {
+    return detail.field === category;
   }
   function handleCategory(value) {
     setCategory(value);
@@ -39,19 +36,10 @@ export default function Portfolio({ details }) {
             <PortfolioNavBar
               handleCategory={handleCategory}
               isActive={category}
+              fields={fields}
             />
-            {category === "all" && <AllCategoriesItems details={allDetails} />}
-            {category === "graphicDesigner" && (
-              <GraphicDesignItems details={graphicDesign} />
-            )}
-            {category === "webDesigner" && (
-              <WebDesignItems details={webDevelopment} />
-            )}
-            {category === "photoGraphy" && (
-              <PhotoGraphyItems details={photoGraphy} />
-            )}
-
-            <div></div>
+            {category === "all" && <AllCategoriesItems details={allLinks} />}
+            {category !== "all" && <PortfolioItems details={dataArray} />}
           </div>
         </div>
       </div>

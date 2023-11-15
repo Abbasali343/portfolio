@@ -2,8 +2,8 @@ import ResumeCard from "./ResumeCard";
 import "../assets/styles/Main.css";
 
 export default function Education({ details }) {
-  const renderCard = details.slice(0,3).map((item) => (
-    <div key={item}>
+  const renderCard = details.slice(0,3).map((item,index) => (
+    <div key={index}>
       <ResumeCard
         degree={item.title}
         institute={item.company}
