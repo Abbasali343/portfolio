@@ -4,24 +4,20 @@ import development from "../assets/images/web-development.png";
 import paint from "../assets/images/paint.png";
 import "../assets/styles/Main.css";
 
-const text1 =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-const text2 =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-const text3 =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-const title1 = "PAINT DESIGN";
-const title2 = "WEB DESIGN";
-const title3 = "PHOTOGRAPHY";
-
-export default function TalentCards() {
+export default function TalentCards({professionsData}) {
+  let renderCard;
+  if(professionsData){
+    renderCard = professionsData.slice(0,3).map((item,index)=>(
+      <>
+      <CardAboutMe title={item.title} text={item.description} source={item.link} key={index} />
+      </>
+    ))
+  }
   return (
     <>
       <div className="talent-container">
         <h1 className="talent-heading">What I Do ?</h1>
-        <CardAboutMe title={title1} text={text1} source={paint} />
-        <CardAboutMe title={title2} text={text2} source={development} />
-        <CardAboutMe title={title3} text={text3} source={photography} />
+        {renderCard}
       </div>
     </>
   );

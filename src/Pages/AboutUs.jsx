@@ -7,7 +7,7 @@ import MiniMenu from "../Layout/MiniMenu";
 import "../assets/styles/Home.css";
 import "../assets/styles/Main.css";
 
-export default function AboutUs({ details }) {
+export default function AboutUs({ details,professionsData }) {
   return (
     <>
       <div className="body" id="about-us">
@@ -24,7 +24,7 @@ export default function AboutUs({ details }) {
                 <ProjectAnalysis details={details} />
               </div>
               <div className="talent">
-                <TalentCards />
+                <TalentCards professionsData={professionsData} />
               </div>
             </div>
           </div>

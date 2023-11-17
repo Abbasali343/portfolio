@@ -43,6 +43,7 @@ export default function Main() {
   let resumeExperience = [];
   let portFolioData = [];
   let testimonialData = [];
+  let professionsData = [];
 
   if (data) {
     name = data.name;
@@ -59,6 +60,7 @@ export default function Main() {
     resumeExperience = data.experienceData;
     portFolioData = data.pfLinks;
     testimonialData = data.testimonials;
+    professionsData = data.professionsData;
   }
 
   function handleScroll(id) {
@@ -118,6 +120,7 @@ export default function Main() {
                     followers,
                     experience,
                   }}
+                  professionsData={professionsData}
                 />
               </div>
               <div className="main-body-sub-container">
