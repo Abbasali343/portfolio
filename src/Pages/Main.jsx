@@ -88,6 +88,7 @@ export default function Main() {
         : null;
     setIsActive(activeAmount);
   };
+  
 
   return (
     <>

@@ -7,16 +7,7 @@ import "../assets/styles/Main.css";
 const text =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry,s standard dummy text ever since the 1500s,";
 
-const emailAddress = "abc@gmail.com";
-const phoneNumber = "0000000000";
-
 export default function ContactUs({ email,phoneNo }) {
-  // let email = '';
-  // let phoneNo = ';';
-  // if(details.length!==0){
-  //   email = details[0].email;
-  //   phoneNo = details[0].phoneNo;
-  // }
     return (
     <>
       <div className="container" id="contact-us">
@@ -33,14 +24,14 @@ export default function ContactUs({ email,phoneNo }) {
                   <img className="cnt-image" src={emailPic} />
                   <div className="cnt-details">
                     <h4>{email}</h4>
-                    <h4>{email}</h4>
+                    
                   </div>
                 </div>
                 <div className="cnt-call">
                   <img className="cnt-image" src={call} />
                   <div className="cnt-details">
                     <h4>{phoneNo}</h4>
-                    <h4>{phoneNo}</h4>
+                    
                   </div>
                 </div>
               </div>
