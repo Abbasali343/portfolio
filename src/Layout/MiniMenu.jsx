@@ -31,7 +31,7 @@ export default function MiniMenu({ isActive, handleScroll }) {
 
   return (
     <>
-      <div className="menu-sub-container">
+      <div className="menu-sub-container" id="menu-sub-container">
         {icons("main", home, "#main")}
         {icons("about-us", about, "#about-us")}
         {icons("resume", resume, "#resume")}

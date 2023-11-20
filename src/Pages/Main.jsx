@@ -24,6 +24,25 @@ export default function Main() {
       });
   };
 
+  window.addEventListener("scroll", () => {
+    // Get the current scroll position
+    const scrollPosition = window.scrollY;
+    setScrollAmount(scrollPosition);
+    const activeAmount =
+      scrollAmount < 1220
+        ? "about-us"
+        : scrollAmount < 1860
+        ? "resume"
+        : scrollAmount < 2515
+        ? "portfolio"
+        : scrollAmount < 3150
+        ? "testimonials"
+        : scrollAmount < 3220
+        ? "contact-us"
+        : null;
+    setIsActive(activeAmount);
+  });
+
   function getName(name) {
     setSelectedName(name);
     fetchUser(name);
@@ -73,22 +92,7 @@ export default function Main() {
   const handleScroll1 = (event) => {
     // Get the current scroll position from the scrollTop property of the div
     const newScrollAmount = event.target.scrollTop;
-    setScrollAmount(newScrollAmount);
-    const activeAmount =
-      scrollAmount < 580
-        ? "about-us"
-        : scrollAmount < 1190
-        ? "resume"
-        : scrollAmount < 1820
-        ? "portfolio"
-        : scrollAmount < 2450
-        ? "testimonials"
-        : scrollAmount < 2560
-        ? "contact-us"
-        : null;
-    setIsActive(activeAmount);
   };
-  
 
   return (
     <>
@@ -100,56 +104,43 @@ export default function Main() {
             handleScroll={handleScroll}
             details={{ name, profession, description, profile }}
           />
-          <div className="main-page-container">
-            <div className="main-side-bar">
-              <SideBar
-                isActive={isActive}
+
+          <div className="main-page-container-2">
+            {/* <div className="sidebar-container-2"> */}
+            <SideBar
+              isActive={isActive}
+              handleScroll={handleScroll}
+              scrollAmount={scrollAmount}
+              link={profile}
+            />
+            {/* </div> */}
+            <div className="main-body-container-2">
+              <AboutUs
+                details={{
+                  name,
+                  profession,
+                  description,
+                  clients,
+                  projects,
+                  followers,
+                  experience,
+                }}
+                professionsData={professionsData}
+              />
+              <Resume
+                education={resumeEducation}
+                experience={resumeExperience}
+              />
+              <Portfolio details={portFolioData} />
+              <Testimonials details={testimonialData} />
+              <ContactUs
                 handleScroll={handleScroll}
-                scrollAmount={scrollAmount}
-                link={profile}
+                email={email}
+                phoneNo={phoneNo}
               />
             </div>
-            <div className="main-body" onScroll={handleScroll1}>
-              <div className="main-body-sub-container">
-                <AboutUs
-                  details={{
-                    name,
-                    profession,
-                    description,
-                    clients,
-                    projects,
-                    followers,
-                    experience,
-                  }}
-                  professionsData={professionsData}
-                />
-              </div>
-              <div className="main-body-sub-container">
-                <div id="resume">
-                  <Resume
-                    education={resumeEducation}
-                    experience={resumeExperience}
-                  />
-                </div>
-              </div>
-              <div className="main-body-sub-container">
-                <Portfolio details={portFolioData} />
-              </div>
-              <div className="main-body-sub-container">
-                <Testimonials details={testimonialData} />
-              </div>
-              <div className="main-body-sub-container">
-                <ContactUs
-                  handleScroll={handleScroll}
-                  email={email}
-                  phoneNo={phoneNo}
-                />
-              </div>
-            </div>
-            <div className="main-menu">
-              <div className="menu-container">
-                <MiniMenu isActive={isActive} handleScroll={handleScroll} />
-              </div>
+            <div className="mini-menu-container-2-sticky">
+              <MiniMenu isActive={isActive} handleScroll={handleScroll} />
             </div>
           </div>
         </div>

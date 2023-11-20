@@ -17,7 +17,7 @@ export default function Resume({ education,experience }) {
   // }
   return (
     <>
-      <div className="container">
+      <div className="container" id="resume">
         <div className="body">
           <div className="main-container">
             <Header title={"RESUME"} />

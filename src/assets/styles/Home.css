@@ -7,7 +7,7 @@
   background-color: #fff;
   display: flex;
   position: relative;
-  left: -10px;
+  left: 0px;
   top: -10px;
 }
 .image-container {
@@ -85,9 +85,12 @@
 }
 
 .sidebar-container {
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 625px;
   background-color: #ffba31;
+  margin-left: -10px;
+  position: sticky;
+  top: 0;
 }
 .sidebar-image {
   width: 100%;
@@ -99,7 +102,7 @@
   margin-top: -10px;
 }
 
-.main-page-container::-webkit-scrollbar{
+.main-page-container::-webkit-scrollbar {
   display: none;
 }
 .main-body-sub-container {
@@ -165,12 +168,18 @@
   border: 1px solid #ffba31;
   border-radius: 35px;
   transform: translate(30px, 0);
+  position: sticky;
+  top: 130px;
+}
+#menu-sub-container {
+  /* display: none; */
 }
 .icon {
   width: 30px;
   height: 20px;
   margin-top: 30px;
   margin-left: 5px;
+  cursor: pointer;
 }
 .icon:hover {
   background-color: #fff;
