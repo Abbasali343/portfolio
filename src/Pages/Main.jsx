@@ -99,13 +99,13 @@ export default function Main() {
       {selectedName === "" ? (
         <ProfileSelector getName={getName} />
       ) : (
-        <div>
+        <div className="main-page-all-in-div" >
           <Home
             handleScroll={handleScroll}
             details={{ name, profession, description, profile }}
           />
 
-          <div className="main-page-container-2">
+          <div className="main-page-container-2" >
             {/* <div className="sidebar-container-2"> */}
             <SideBar
               isActive={isActive}

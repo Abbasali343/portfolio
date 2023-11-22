@@ -19,8 +19,8 @@
   height: 636px;
 }
 .profile-img {
-  width: 640px;
-  height: 636px;
+  width: 100%;
+  height: 100%;
 }
 .sub-container {
   margin-top: 100px;
@@ -226,4 +226,116 @@
   overflow: auto;
   z-index: 10;
   border-top: none;
+}
+
+/* css for 820 pixel screens */
+@media (max-width: 821px) {
+  .container {
+    width: 820px;
+    height: 1180px;
+    display: flex;
+    flex-direction: column;
+  }
+  .image-container {
+    width: 100%;
+    height: 590px;
+    order: 1;
+    background-color: #fff;
+  }
+  .text-container {
+    width: 100%;
+    height: 590px;
+    order: 2;
+  }
+  .sidebar-container {
+    display: none;
+  }
+  .body {
+    width: 820px;
+    height: 1180px;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-sub-container {
+    display: none;
+  }
+  .intro-container {
+    width: 100%;
+    height: 100%;
+  }
+  /* css for user selector page */
+  .user-selector {
+    width: 600px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, 310px);
+  }
+  .dropdown-container {
+    width: 350px;
+    height: 70px;
+    transform: translate(50px, 90px);
+  }
+  .options-container {
+    margin-top: 21px;
+  }
+  .options {
+    padding: 10px;
+  }
+}
+
+/* css for 430 pixel screens */
+@media (max-width: 431px) {
+  .main-page-all-in-div {
+    width: 430px;
+    height: 932px;
+  }
+  .container {
+    width: 430px;
+    height: 932px;
+    display: flex;
+    flex-direction: column;
+  }
+  .image-container {
+    width: 100%;
+    height: 466px;
+    order: 1;
+    background-color: #fff;
+  }
+  .text-container {
+    width: 100%;
+    height: 466px;
+    order: 2;
+  }
+  .intro{
+  }
+  .body {
+    position: relative;
+    width: 430px;
+    height: 932px;
+  }
+  .sub-container {
+    margin-top: 0;
+  }
+  /* css for user selector page */
+  .user-selector {
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, 310px);
+  }
+  .dropdown-container {
+    width: 250px;
+    height: 60px;
+    transform: translate(-60px, -30px);
+  }
+  .options-container {
+    height: 130px;
+    margin-top: 12px;
+  }
+  .options {
+    padding: 0px;
+  }
+
 }

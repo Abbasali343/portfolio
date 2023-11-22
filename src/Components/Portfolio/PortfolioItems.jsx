@@ -9,7 +9,7 @@ export default function PortfolioItems({ details }) {
     }
     if (links !== null) {
       renderCard = links.map((item) => (
-        <div key={item}>
+        <div key={item} className="pg-field-image-container">
           <img src={item} className="pg-image" />
         </div>
       ));

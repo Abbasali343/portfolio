@@ -19,7 +19,7 @@ export default function Resume({ education,experience }) {
     <>
       <div className="container" id="resume">
         <div className="body">
-          <div className="main-container">
+          <div className="main-container" >
             <Header title={"RESUME"} />
             <div className="education">
               <Education details={education} />

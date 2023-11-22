@@ -7,14 +7,14 @@ import "../assets/styles/Main.css";
 const text =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry,s standard dummy text ever since the 1500s,";
 
-export default function ContactUs({ email,phoneNo }) {
-    return (
+export default function ContactUs({ email, phoneNo }) {
+  return (
     <>
-      <div className="container" id="contact-us">
+      <div className="container" id="contact-us" style={{background:"pink"}}>
         <div className="body">
           <div className="main-container">
             <Header title={"CONTACT ME"} />
-            <div className="contact-container">
+            <div className="contact-container" >
               <h1 className="cnt-heading">
                 Feel <span className="cnt-span">free</span> to Contact Me!
               </h1>
@@ -23,19 +23,17 @@ export default function ContactUs({ email,phoneNo }) {
                 <div className="cnt-email">
                   <img className="cnt-image" src={emailPic} />
                   <div className="cnt-details">
-                    <h4>{email}</h4>
-                    
+                    <h4 className="cnt-main-heading">{email}</h4>
                   </div>
                 </div>
                 <div className="cnt-call">
                   <img className="cnt-image" src={call} />
                   <div className="cnt-details">
-                    <h4>{phoneNo}</h4>
-                    
+                    <h4 className="cnt-main-heading">{phoneNo}</h4>
                   </div>
                 </div>
               </div>
-              <h1 className="cnt-greetings">Thanks for Patience!</h1>
+              <h1 className="cnt-greetings" >Thanks for Patience!</h1>
             </div>
           </div>
         </div>
