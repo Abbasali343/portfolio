@@ -24,22 +24,64 @@ export default function Main() {
       });
   };
 
+  // Define breakpoints for media queries
+  const breakpoints = {
+    small: 430,
+    medium: 821,
+    large: 1280,
+  };
+
   window.addEventListener("scroll", () => {
-    // Get the current scroll position
     const scrollPosition = window.scrollY;
-    setScrollAmount(scrollPosition);
-    const activeAmount =
-      scrollAmount < 1220
-        ? "about-us"
-        : scrollAmount < 1860
-        ? "resume"
-        : scrollAmount < 2515
-        ? "portfolio"
-        : scrollAmount < 3150
-        ? "testimonials"
-        : scrollAmount < 3220
-        ? "contact-us"
-        : null;
+
+    // Get the current screen size based on media queries
+    const screenSize =
+      window.innerWidth < breakpoints.small
+        ? "small"
+        : window.innerWidth < breakpoints.medium
+        ? "medium"
+        : "large";
+
+    // Update the logic based on the current screen size
+    let activeAmount;
+    switch (screenSize) {
+      case "small":
+        activeAmount =
+          scrollPosition < 500
+            ? "about-us"
+            : scrollPosition < 1000
+            ? "resume"
+            : null;
+        break;
+      case "medium":
+        activeAmount =
+          scrollPosition < 2345
+            ? "about-us"
+            : scrollPosition < 3525
+            ? "resume"
+            : scrollPosition < 4698
+            ? "portfolio"
+            : scrollPosition < 5870
+            ? "testimonials"
+            : "contact-us";
+        break;
+      case "large":
+        activeAmount =
+          scrollPosition < 1220
+            ? "about-us"
+            : scrollPosition < 1860
+            ? "resume"
+            : scrollPosition < 2515
+            ? "portfolio"
+            : scrollPosition < 3150
+            ? "testimonials"
+            : "contact-us";
+        break;
+
+      default:
+        break;
+    }
+
     setIsActive(activeAmount);
   });
 

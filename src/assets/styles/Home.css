@@ -258,7 +258,7 @@
     align-items: center;
   }
   .menu-sub-container {
-    display: none;
+    transform: translate(80px, 320px);
   }
   .intro-container {
     width: 100%;
@@ -309,6 +309,9 @@
     order: 2;
   }
   .intro {
+  }
+  .menu-sub-container{
+    display: none;
   }
   .body {
     position: relative;
