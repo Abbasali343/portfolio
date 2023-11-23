@@ -91,6 +91,7 @@
   margin-left: -10px;
   position: sticky;
   top: 0;
+ 
 }
 .sidebar-image {
   width: 100%;
@@ -307,7 +308,7 @@
     height: 466px;
     order: 2;
   }
-  .intro{
+  .intro {
   }
   .body {
     position: relative;
@@ -337,5 +338,4 @@
   .options {
     padding: 0px;
   }
-
 }
