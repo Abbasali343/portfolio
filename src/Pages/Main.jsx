@@ -18,7 +18,9 @@ export default function Main() {
 
   const fetchUser = (name) => {
     axios
-      .get(`http://localhost:3000/v1/admin/oneUser?name=${name}`)
+      .get(
+        `https://easy-pink-nematode-tie.cyclic.app/v1/admin/oneUser?name=${name}`
+      )
       .then((response) => {
         setData(response.data);
       });
