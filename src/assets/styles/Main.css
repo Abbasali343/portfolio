@@ -517,16 +517,17 @@
     height: 40px;
   }
   .res-card-heading {
-    font-size: 28px;
+    font-size: 22px;
+    transform: translate(0, 5px);
   }
   .company {
     width: 99%;
     height: 40px;
-    font-size: 28px;
+    font-size: 22px;
   }
   .res-description {
     height: 100px;
-    font-size: 24px;
+    font-size: 22px;
   }
   /* css for portfolio */
   .navbar {
@@ -695,17 +696,17 @@
     width: 100%;
   }
   .res-card-heading {
-    font-size: 16px;
+    font-size: 12px;
   }
   .company {
-    font-size: 16px;
+    font-size: 12px;
   }
   .res-description {
     width: 100px;
     height: 70px;
-    font-size: 14px;
+    font-size: 12px;
 
-    transform: translate(4px, -20px);
+    transform: translate(4px, -10px);
   }
   .experience-container {
     margin-top: -120px;
